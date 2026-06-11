@@ -16,7 +16,7 @@ export default function Dashboard() {
   const fetchTasks = async () => {
 
   const res = await axios.get(
-    "https://hairdrama-task-manager-production-ecd5.up.railway.app//tasks"
+    "https://hairdrama-task-manager-production-ecd5.up.railway.app/tasks"
   );
 
   setTasks(res.data);
@@ -25,7 +25,7 @@ export default function Dashboard() {
   const createTask = async () => {
 
   await axios.post(
-    "https://hairdrama-task-manager-production-ecd5.up.railway.app//tasks",
+    "https://hairdrama-task-manager-production-ecd5.up.railway.app/tasks",
     {
       title,
       description,
@@ -45,7 +45,7 @@ const completeTask = async (
 ) => {
 
   await axios.patch(
-    `https://hairdrama-task-manager-production-ecd5.up.railway.app//tasks/${id}/complete`
+    `https://hairdrama-task-manager-production-ecd5.up.railway.app/tasks/${id}/complete`
   );
 
   fetchTasks();
@@ -56,7 +56,7 @@ const completeTask = async (
     if (session) {
 
       axios.post(
-        "https://hairdrama-task-manager-production-ecd5.up.railway.app//auth/google-user",
+        "https://hairdrama-task-manager-production-ecd5.up.railway.app/auth/google-user",
         {
           email: session.user?.email,
           name: session.user?.name,
@@ -70,7 +70,7 @@ const completeTask = async (
   useEffect(() => {
 
   axios
-    .get("https://hairdrama-task-manager-production-ecd5.up.railway.app//users")
+    .get("https://hairdrama-task-manager-production-ecd5.up.railway.app/users")
     .then((res) => {
 
       setUsers(res.data);
