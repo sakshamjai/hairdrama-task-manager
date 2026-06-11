@@ -21,11 +21,11 @@ def create_task():
         "assigned_email": assigned_email
     }).execute()
 
-    send_email(
-    assigned_email,
-    "New Task Assigned",
-    f"You have been assigned a task: {title}"
-    )
+    # send_email(
+    # assigned_email,
+    # "New Task Assigned",
+    # f"You have been assigned a task: {title}"
+    # )
 
     return {
         "message": "Task created",
@@ -52,11 +52,11 @@ def complete_task(task_id):
     creator_email = response.data[0]["creator_email"]
 
 
-    send_email(
-    creator_email,
-    "Task Completed",
-    "Your assigned task has been completed."
-    )
+    # send_email(
+    # creator_email,
+    # "Task Completed",
+    # "Your assigned task has been completed."
+    # )
 
     return {
         "message": "Task completed",
